@@ -2,17 +2,9 @@
 #define ADDWINDOW_H
 
 #include <QDialog>
-#include <QFile>
-#include <QDir>
-#include <QDebug>
-#include <QString>
-#include <QTextStream>
-#include <QVector>
-#include <QTableWidgetItem>
-#include <QtWidgets>
 #include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QDebug>
+#include <QtSql>
+
 
 namespace Ui {
 class addWindow;

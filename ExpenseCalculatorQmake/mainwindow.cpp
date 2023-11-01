@@ -8,11 +8,6 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("./Database.db");
-    if (!db.open()) {
-        qDebug() << "Failed to open the database: " << db.lastError().text();
-    }
     setWindowTitle("Expenses calculator");
     resize(500, 400);
 

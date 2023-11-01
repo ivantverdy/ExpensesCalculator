@@ -1,11 +1,20 @@
 #include "addwindow.h"
 #include "ui_addwindow.h"
 
-addWindow::addWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::addWindow)
+addWindow::addWindow(QWidget *parent) : QDialog(parent), ui(new Ui::addWindow)
 {
     ui->setupUi(this);
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(QCoreApplication::applicationDirPath() + "/MyDatabase.db");
+    if(db.open())
+    {
+        qDebug() << "Database is connected";
+    }
+    else
+    {
+        qDebug() << "Database is not connected";
+        qDebug() << "Error: " << db.lastError();
+    }
     setWindowTitle("Add expense");
     resize(500, 400);
     connect(ui->save, SIGNAL(clicked()), this, SLOT(saveClick()));
@@ -34,16 +43,20 @@ void addWindow::saveClick()
         accept();
     }*/
 
-    QSqlQuery query(db);
+    db.open();
+    QSqlDatabase::database().transaction();
+    QSqlQuery QueryInsertData(db);
+    QueryInsertData.prepare("INSERT INTO Expense(Label, Category, Description, Price, DateTime) VALUES(:label, :category, :description, :price, :DateTime)");
 
-    query.prepare("INSERT INTO expenses (label, category, description, price, date_time) "
-                  "VALUES (:label, :category, :description, :price, :date_time)");
-    query.bindValue(":label", ui->label->text());
-    query.bindValue(":category", ui->category->text());
-    query.bindValue(":description", ui->description->text());
-    query.bindValue(":price", ui->price->value());
-    query.bindValue(":date_time", ui->dateTime->dateTime().toString("yyyy-MM-dd hh:mm:ss"));
+    QueryInsertData.bindValue(":label", ui->label->text());
+    QueryInsertData.bindValue(":category", ui->category->text());
+    QueryInsertData.bindValue(":description", ui->description->text());
+    QueryInsertData.bindValue(":price", ui->price->value());
+    QueryInsertData.bindValue(":date_time", ui->dateTime->dateTime().toString("yyyy-MM-dd hh:mm:ss"));
+    QueryInsertData.exec();
 
+    QSqlDatabase::database().commit();
+    db.close();
     accept();
 }
 
