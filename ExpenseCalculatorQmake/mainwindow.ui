@@ -14,86 +14,86 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>150</y>
-      <width>160</width>
-      <height>146</height>
+      <x>34</x>
+      <y>27</y>
+      <width>721</width>
+      <height>361</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QPushButton" name="addExpence">
-       <property name="text">
-        <string>Add expence</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../Users/aboba/Downloads/calcicon.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Arial Black</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Welcome to Expenses Tracker!</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="editExpence">
-       <property name="text">
-        <string>Edit expence</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="evaluateExpence">
-       <property name="text">
-        <string>Evaluate expence</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="deleteExpence">
-       <property name="text">
-        <string>Delete expence</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="listExpence">
-       <property name="text">
-        <string>List expence</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>10</y>
-      <width>571</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../../Users/aboba/Downloads/calcicon.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="font">
-        <font>
-         <family>Arial Black</family>
-         <pointsize>20</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Welcome to Expenses Tracker!</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="addExpence">
+           <property name="text">
+            <string>Add expence</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="editExpence">
+           <property name="text">
+            <string>Edit expence</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="evaluateExpence">
+           <property name="text">
+            <string>Evaluate expence</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteExpence">
+           <property name="text">
+            <string>Delete expence</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="listExpence">
+           <property name="text">
+            <string>List expence</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>

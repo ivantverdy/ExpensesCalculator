@@ -9,14 +9,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
     setWindowTitle("Expenses calculator");
-    resize(500, 400);
 
+    if(db.open())
+    {
+        qDebug() << "Database is connected";
+    }
+    else
+    {
+        qDebug() << "Database is not connected";
+        qDebug() << "Error: " << db.lastError();
+    }
 
-    connect(ui->addExpence, SIGNAL(clicked()), this, SLOT(addExpence()));
-    connect(ui->deleteExpence, SIGNAL(clicked()), this, SLOT(deleteExpence()));
-    connect(ui->editExpence, SIGNAL(clicked()), this, SLOT(editExpence()));
-    connect(ui->listExpence, SIGNAL(clicked()), this, SLOT(listExpence()));
-    connect(ui->evaluateExpence, SIGNAL(clicked()), this, SLOT(evaluateExpence()));
+    connect(ui->addExpence, SIGNAL(clicked()), this, SLOT(addExpense()));
+    connect(ui->deleteExpence, SIGNAL(clicked()), this, SLOT(deleteExpense()));
+    connect(ui->editExpence, SIGNAL(clicked()), this, SLOT(editExpense()));
+    connect(ui->listExpence, SIGNAL(clicked()), this, SLOT(listExpenses()));
+    connect(ui->evaluateExpence, SIGNAL(clicked()), this, SLOT(evaluateExpenses()));
 }
 
 MainWindow::~MainWindow()
@@ -24,25 +32,23 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::addExpence() {
+void MainWindow::addExpense() {
     addWindowExp = new addWindow(this);
     addWindowExp->show();
 }
 
-void MainWindow::deleteExpence(){
+void MainWindow::deleteExpense(){
 
 }
 
-void MainWindow::editExpence(){
+void MainWindow::editExpense(){
 
 }
 
-void MainWindow::listExpences(){
+void MainWindow::listExpenses(){
 
 }
 
-void MainWindow::evaluateExpences(){
+void MainWindow::evaluateExpenses(){
 
 }
-
-

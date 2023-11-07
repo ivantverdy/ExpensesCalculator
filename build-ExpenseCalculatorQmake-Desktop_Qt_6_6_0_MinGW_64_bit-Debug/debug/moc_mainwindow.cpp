@@ -39,12 +39,12 @@ namespace {
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
     "MainWindow",
-    "addExpence",
+    "addExpense",
     "",
-    "deleteExpence",
-    "editExpence",
-    "listExpences",
-    "evaluateExpences"
+    "deleteExpense",
+    "editExpense",
+    "listExpenses",
+    "evaluateExpenses"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
@@ -62,20 +62,20 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
 Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_stringdata_CLASSMainWindowENDCLASS = {
     {
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
-        QT_MOC_LITERAL(11, 10),  // "addExpence"
+        QT_MOC_LITERAL(11, 10),  // "addExpense"
         QT_MOC_LITERAL(22, 0),  // ""
-        QT_MOC_LITERAL(23, 13),  // "deleteExpence"
-        QT_MOC_LITERAL(37, 11),  // "editExpence"
-        QT_MOC_LITERAL(49, 12),  // "listExpences"
-        QT_MOC_LITERAL(62, 16)   // "evaluateExpences"
+        QT_MOC_LITERAL(23, 13),  // "deleteExpense"
+        QT_MOC_LITERAL(37, 11),  // "editExpense"
+        QT_MOC_LITERAL(49, 12),  // "listExpenses"
+        QT_MOC_LITERAL(62, 16)   // "evaluateExpenses"
     },
     "MainWindow",
-    "addExpence",
+    "addExpense",
     "",
-    "deleteExpence",
-    "editExpence",
-    "listExpences",
-    "evaluateExpences"
+    "deleteExpense",
+    "editExpense",
+    "listExpenses",
+    "evaluateExpenses"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -120,15 +120,15 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
-        // method 'addExpence'
+        // method 'addExpense'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'deleteExpence'
+        // method 'deleteExpense'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'editExpence'
+        // method 'editExpense'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'listExpences'
+        // method 'listExpenses'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'evaluateExpences'
+        // method 'evaluateExpenses'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -140,11 +140,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->addExpence(); break;
-        case 1: _t->deleteExpence(); break;
-        case 2: _t->editExpence(); break;
-        case 3: _t->listExpences(); break;
-        case 4: _t->evaluateExpences(); break;
+        case 0: _t->addExpense(); break;
+        case 1: _t->deleteExpense(); break;
+        case 2: _t->editExpense(); break;
+        case 3: _t->listExpenses(); break;
+        case 4: _t->evaluateExpenses(); break;
         default: ;
         }
     }
