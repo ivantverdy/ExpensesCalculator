@@ -10,16 +10,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     setWindowTitle("Expenses calculator");
 
-    if(db.open())
-    {
-        qDebug() << "Database is connected";
-    }
-    else
-    {
-        qDebug() << "Database is not connected";
-        qDebug() << "Error: " << db.lastError();
-    }
-
     connect(ui->addExpence, SIGNAL(clicked()), this, SLOT(addExpense()));
     connect(ui->deleteExpence, SIGNAL(clicked()), this, SLOT(deleteExpense()));
     connect(ui->editExpence, SIGNAL(clicked()), this, SLOT(editExpense()));

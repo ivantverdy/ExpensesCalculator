@@ -2,8 +2,13 @@
 #define ADDWINDOW_H
 
 #include <QDialog>
-#include <QtSql>
-
+#include <QSqlDatabase>
+#include <QSqlDriver>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QDebug>
+#include <QSqlTableModel>
+#include <QFile>
 
 namespace Ui {
 class addWindow;
@@ -19,6 +24,7 @@ public:
 
 private:
     Ui::addWindow *ui;
+    QSqlDatabase db;
 private slots:
     void saveClick();
     void cancelClick();

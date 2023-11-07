@@ -35,9 +35,9 @@ public:
     QLabel *label_3;
     QDoubleSpinBox *price;
     QLabel *label_4;
-    QLineEdit *description;
-    QLabel *label_5;
     QLineEdit *category;
+    QLabel *label_5;
+    QLineEdit *description;
     QLabel *label_6;
     QDateTimeEdit *dateTime;
     QHBoxLayout *horizontalLayout;
@@ -90,10 +90,10 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
 
-        description = new QLineEdit(verticalLayoutWidget_2);
-        description->setObjectName("description");
+        category = new QLineEdit(verticalLayoutWidget_2);
+        category->setObjectName("category");
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, description);
+        formLayout->setWidget(2, QFormLayout::FieldRole, category);
 
         label_5 = new QLabel(verticalLayoutWidget_2);
         label_5->setObjectName("label_5");
@@ -101,10 +101,10 @@ public:
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_5);
 
-        category = new QLineEdit(verticalLayoutWidget_2);
-        category->setObjectName("category");
+        description = new QLineEdit(verticalLayoutWidget_2);
+        description->setObjectName("description");
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, category);
+        formLayout->setWidget(3, QFormLayout::FieldRole, description);
 
         label_6 = new QLabel(verticalLayoutWidget_2);
         label_6->setObjectName("label_6");

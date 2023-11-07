@@ -17,22 +17,47 @@ addWindow::~addWindow()
 
 void addWindow::saveClick()
 {
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("C:/QT project/build-ExpenseCalculatorQmake-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/addWindowDB.db");
 
-    connectionOpen();
-    QSqlDatabase::database().transaction();
-    QSqlQuery QueryInsertData(db);
-    QueryInsertData.prepare("INSERT INTO Expense(Label, Category, Description, Price, DateTime) VALUES(:label, :category, :description, :price, :DateTime)");
+    if(QFile::exists("C:/QT project/build-ExpenseCalculatorQmake-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/addWindowDB.db"))
+    {
+        qDebug() << "exists";
+    }
+    else
+    {
+        qDebug() << "doesn't";
+        qDebug() << "Error: " << db.lastError();
+    }
 
-    QueryInsertData.bindValue(":label", ui->label->text());
-    QueryInsertData.bindValue(":category", ui->category->text());
-    QueryInsertData.bindValue(":description", ui->description->text());
-    QueryInsertData.bindValue(":price", ui->price->value());
-    QueryInsertData.bindValue(":date_time", ui->dateTime->text());
-    QueryInsertData.exec();
+    if(db.open())
+    {
+        qDebug() << "Database is connected";
+    }
+    else
+    {
+        qDebug() << "Database is not connected";
+        qDebug() << "Error: " << db.lastError();
+    }
 
-    QSqlDatabase::database().commit();
+    //qDebug()<< ui->label->text()<<ui->category->text()<< ui->description->text()<<ui->price->text()<<ui->dateTime->text();
+
+    QSqlQuery query(db);
+    query.prepare("insert into Expense(Label, Category, Description, Price, DateTime) values(:Label, :Category, :Description, :Price, :DateTime)");
+    query.bindValue(":Label", QVariant(ui->label->text()));
+    query.bindValue(":Category", QVariant(ui->category->text()));
+    query.bindValue(":Description", QVariant(ui->description->text()));
+    query.bindValue(":Price", QVariant(ui->price->text()));
+    query.bindValue(":DateTime", QVariant(ui->dateTime->text()));
+    if (query.exec()) {
+        qDebug() << "Data saved successfully!";
+    } else {
+        qDebug() << "Error saving data: " << query.lastError();
+    }
+    query.lastError().text();
     db.close();
     accept();
+
 }
 
 
