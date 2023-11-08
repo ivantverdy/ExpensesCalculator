@@ -18,9 +18,9 @@ addWindow::~addWindow()
 void addWindow::saveClick()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("C:/QT project/build-ExpenseCalculatorQmake-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/addWindowDB.db");
+    db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
 
-    if(QFile::exists("C:/QT project/build-ExpenseCalculatorQmake-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/addWindowDB.db"))
+    if(QFile::exists("C:/QT project/databases/addWindowDB.db"))
     {
         qDebug() << "exists";
     }
@@ -40,24 +40,27 @@ void addWindow::saveClick()
         qDebug() << "Error: " << db.lastError();
     }
 
-    //qDebug()<< ui->label->text()<<ui->category->text()<< ui->description->text()<<ui->price->text()<<ui->dateTime->text();
+    qDebug() << ui->label->text()<<ui->category->text()<< ui->description->text()<<ui->price->text()<<ui->dateTime->text();
 
     QSqlQuery query(db);
+    //query.prepare("select * from Expense");
     query.prepare("insert into Expense(Label, Category, Description, Price, DateTime) values(:Label, :Category, :Description, :Price, :DateTime)");
-    query.bindValue(":Label", QVariant(ui->label->text()));
-    query.bindValue(":Category", QVariant(ui->category->text()));
-    query.bindValue(":Description", QVariant(ui->description->text()));
-    query.bindValue(":Price", QVariant(ui->price->text()));
-    query.bindValue(":DateTime", QVariant(ui->dateTime->text()));
+    //query.prepare("insert into Expense(Label) values('123')");
+    query.bindValue(":Label", ui->label->text());
+    query.bindValue(":Category", ui->category->text());
+    query.bindValue(":Description", ui->description->text());
+    query.bindValue(":Price", ui->price->value());
+    query.bindValue(":DateTime", ui->dateTime->text());
+    qDebug() << query.boundValues();
     if (query.exec()) {
         qDebug() << "Data saved successfully!";
     } else {
         qDebug() << "Error saving data: " << query.lastError();
     }
+
     query.lastError().text();
     db.close();
     accept();
-
 }
 
 
