@@ -10,15 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     addwindow.cpp \
+    listviewelement.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     addwindow.h \
+    listviewelement.h \
     mainwindow.h
 
 FORMS += \
     addwindow.ui \
+    listviewelement.ui \
     mainwindow.ui
 
 # Default rules for deployment.

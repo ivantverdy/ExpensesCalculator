@@ -4,17 +4,16 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QListWidgetItem>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     setWindowTitle("Expenses calculator");
-
-    connect(ui->addExpence, SIGNAL(clicked()), this, SLOT(addExpense()));
-    connect(ui->deleteExpence, SIGNAL(clicked()), this, SLOT(deleteExpense()));
-    connect(ui->editExpence, SIGNAL(clicked()), this, SLOT(editExpense()));
-    connect(ui->listExpence, SIGNAL(clicked()), this, SLOT(listExpenses()));
-    connect(ui->evaluateExpence, SIGNAL(clicked()), this, SLOT(evaluateExpenses()));
+    setWindowIcon(QIcon("C:/QT project/calcicon.png"));
+    on_loadData_clicked();
+    connect(ui->addExpense, SIGNAL(clicked()), this, SLOT(addExpense()));
+    connect(ui->listView, SIGNAL(doubleClicked(const QModelIndex&)), this, SLOT(on_listView_doubleClicked(const QModelIndex&)));
 }
 
 MainWindow::~MainWindow()
@@ -27,18 +26,28 @@ void MainWindow::addExpense() {
     addWindowExp->show();
 }
 
-void MainWindow::deleteExpense(){
+void MainWindow::on_loadData_clicked()
+{
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
+    db.open();
+    QSqlQueryModel *model = new QSqlQueryModel();
+    QSqlQuery addQuery(db);
+
+    addQuery.prepare("select Description from Expense");
+    addQuery.exec();
+    model->setQuery(addQuery);
+    ui->listView->setModel(model);
+    db.close();
+    qDebug() << "Number of columns in the model: " << model->columnCount();
+    qDebug() << "Query: " << addQuery.lastQuery();
+}
+
+void MainWindow::on_listView_doubleClicked(const QModelIndex &index)
+{
 
 }
 
-void MainWindow::editExpense(){
 
-}
 
-void MainWindow::listExpenses(){
-
-}
-
-void MainWindow::evaluateExpenses(){
-
-}

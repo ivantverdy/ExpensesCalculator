@@ -10,14 +10,12 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -28,20 +26,13 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *label;
-    QLabel *label_2;
-    QVBoxLayout *verticalLayout_3;
+    QWidget *widget;
     QVBoxLayout *verticalLayout;
-    QPushButton *addExpence;
-    QPushButton *editExpence;
-    QPushButton *evaluateExpence;
-    QPushButton *deleteExpence;
-    QPushButton *listExpence;
-    QMenuBar *menubar;
-    QMenu *menuTransactions;
+    QListView *listView;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *loadData;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *addExpense;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -51,80 +42,58 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        verticalLayoutWidget_2 = new QWidget(centralwidget);
-        verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(34, 27, 721, 361));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label = new QLabel(verticalLayoutWidget_2);
-        label->setObjectName("label");
-        label->setPixmap(QPixmap(QString::fromUtf8("../../Users/aboba/Downloads/calcicon.png")));
-
-        horizontalLayout_2->addWidget(label);
-
-        label_2 = new QLabel(verticalLayoutWidget_2);
-        label_2->setObjectName("label_2");
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Arial Black")});
-        font.setPointSize(20);
-        font.setBold(true);
-        label_2->setFont(font);
-
-        horizontalLayout_2->addWidget(label_2);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_2);
-
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout = new QVBoxLayout();
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(10, 10, 771, 561));
+        verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setObjectName("verticalLayout");
-        addExpence = new QPushButton(verticalLayoutWidget_2);
-        addExpence->setObjectName("addExpence");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        listView = new QListView(widget);
+        listView->setObjectName("listView");
 
-        verticalLayout->addWidget(addExpence);
+        verticalLayout->addWidget(listView);
 
-        editExpence = new QPushButton(verticalLayoutWidget_2);
-        editExpence->setObjectName("editExpence");
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
+        loadData = new QPushButton(widget);
+        loadData->setObjectName("loadData");
+        loadData->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 127);\n"
+"font: 12pt \"Segoe UI\";\n"
+"min-width: 10px;\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius:10px;\n"
+"border-color: white;\n"
+"color: white;\n"
+"pedding: 6px;"));
 
-        verticalLayout->addWidget(editExpence);
+        horizontalLayout->addWidget(loadData);
 
-        evaluateExpence = new QPushButton(verticalLayoutWidget_2);
-        evaluateExpence->setObjectName("evaluateExpence");
+        horizontalSpacer = new QSpacerItem(500, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
 
-        verticalLayout->addWidget(evaluateExpence);
+        horizontalLayout->addItem(horizontalSpacer);
 
-        deleteExpence = new QPushButton(verticalLayoutWidget_2);
-        deleteExpence->setObjectName("deleteExpence");
+        addExpense = new QPushButton(widget);
+        addExpense->setObjectName("addExpense");
+        addExpense->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 127);\n"
+"font: 12pt \"Segoe UI\";\n"
+"min-width: 10px;\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius:10px;\n"
+"border-color: white;\n"
+"color: white;\n"
+"pedding: 6px;"));
 
-        verticalLayout->addWidget(deleteExpence);
-
-        listExpence = new QPushButton(verticalLayoutWidget_2);
-        listExpence->setObjectName("listExpence");
-
-        verticalLayout->addWidget(listExpence);
+        horizontalLayout->addWidget(addExpense);
 
 
-        verticalLayout_3->addLayout(verticalLayout);
-
-
-        verticalLayout_2->addLayout(verticalLayout_3);
+        verticalLayout->addLayout(horizontalLayout);
 
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
-        menuTransactions = new QMenu(menubar);
-        menuTransactions->setObjectName("menuTransactions");
-        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
-
-        menubar->addAction(menuTransactions->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -134,14 +103,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QString());
-        label_2->setText(QCoreApplication::translate("MainWindow", "Welcome to Expenses Tracker!", nullptr));
-        addExpence->setText(QCoreApplication::translate("MainWindow", "Add expence", nullptr));
-        editExpence->setText(QCoreApplication::translate("MainWindow", "Edit expence", nullptr));
-        evaluateExpence->setText(QCoreApplication::translate("MainWindow", "Evaluate expence", nullptr));
-        deleteExpence->setText(QCoreApplication::translate("MainWindow", "Delete expence", nullptr));
-        listExpence->setText(QCoreApplication::translate("MainWindow", "List expence", nullptr));
-        menuTransactions->setTitle(QCoreApplication::translate("MainWindow", "Transactions", nullptr));
+        loadData->setText(QCoreApplication::translate("MainWindow", "Load data", nullptr));
+        addExpense->setText(QCoreApplication::translate("MainWindow", "New", nullptr));
     } // retranslateUi
 
 };

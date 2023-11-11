@@ -18,13 +18,12 @@ public:
 private:
     Ui::MainWindow *ui;
     addWindow *addWindowExp;
-
+    QSqlQueryModel* model;
+    QSqlDatabase db;
 private slots:
     void addExpense();
-    void deleteExpense();
-    void editExpense();
-    void listExpenses();
-    void evaluateExpenses();
+    void on_loadData_clicked();
+    void on_listView_doubleClicked(const QModelIndex &index);
 };
 
 #endif // MAINWINDOW_H
