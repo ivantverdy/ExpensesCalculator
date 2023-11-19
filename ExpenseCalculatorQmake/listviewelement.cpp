@@ -1,15 +1,15 @@
 #include "listviewelement.h"
 #include "ui_listviewelement.h"
 
-listViewElement::listViewElement(QWidget *parent, QString variable) : QDialog(parent), ui(new Ui::listViewElement)
+listViewElement::listViewElement(QWidget *parent, QVariant index) : QDialog(parent), ui(new Ui::listViewElement)
 {
     ui->setupUi(this);
-    var = variable;
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
     db.open();
     QSqlQuery queryShow(db);
-    queryShow.prepare("select * from Expense where Description='"+var+"'");
+    queryShow.prepare("select * from Expense where id=:id");
+    queryShow.bindValue(":id", index);
     if(queryShow.exec())
     {
         while(queryShow.next()){

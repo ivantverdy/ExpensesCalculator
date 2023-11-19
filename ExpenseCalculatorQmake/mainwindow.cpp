@@ -47,8 +47,7 @@ void MainWindow::onRefreshClicked()
 
 void MainWindow::onListViewDoubleClicked(const QModelIndex &index)
 {
-    QString variable = ui->listView->model()->data(index).toString();
-    listOne = new listViewElement(this, variable);
+    listOne = new listViewElement(this, index.row());
     listOne->show();
 }
 

@@ -19,15 +19,14 @@ class listViewElement : public QDialog
     Q_OBJECT
 
 public:
-    explicit listViewElement(QWidget *parent = nullptr, QString variable = "");
+    explicit listViewElement(QWidget *parent = nullptr, QVariant index = 0);
     ~listViewElement();
 private slots:
-
 
 private:
     Ui::listViewElement *ui;
     QSqlDatabase db;
-    QString var;
+    qint64 id;
 };
 
 #endif // LISTVIEWELEMENT_H
