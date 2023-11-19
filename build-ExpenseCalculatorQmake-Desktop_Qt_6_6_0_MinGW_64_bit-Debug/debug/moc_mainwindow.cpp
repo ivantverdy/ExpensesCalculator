@@ -41,8 +41,8 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "MainWindow",
     "addExpense",
     "",
-    "on_loadData_clicked",
-    "on_listView_doubleClicked",
+    "onRefreshClicked",
+    "onListViewDoubleClicked",
     "QModelIndex",
     "index"
 );
@@ -52,8 +52,8 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata0[11];
     char stringdata1[11];
     char stringdata2[1];
-    char stringdata3[20];
-    char stringdata4[26];
+    char stringdata3[17];
+    char stringdata4[24];
     char stringdata5[12];
     char stringdata6[6];
 };
@@ -64,16 +64,16 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
         QT_MOC_LITERAL(11, 10),  // "addExpense"
         QT_MOC_LITERAL(22, 0),  // ""
-        QT_MOC_LITERAL(23, 19),  // "on_loadData_clicked"
-        QT_MOC_LITERAL(43, 25),  // "on_listView_doubleClicked"
-        QT_MOC_LITERAL(69, 11),  // "QModelIndex"
-        QT_MOC_LITERAL(81, 5)   // "index"
+        QT_MOC_LITERAL(23, 16),  // "onRefreshClicked"
+        QT_MOC_LITERAL(40, 23),  // "onListViewDoubleClicked"
+        QT_MOC_LITERAL(64, 11),  // "QModelIndex"
+        QT_MOC_LITERAL(76, 5)   // "index"
     },
     "MainWindow",
     "addExpense",
     "",
-    "on_loadData_clicked",
-    "on_listView_doubleClicked",
+    "onRefreshClicked",
+    "onListViewDoubleClicked",
     "QModelIndex",
     "index"
 };
@@ -118,9 +118,9 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
         // method 'addExpense'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_loadData_clicked'
+        // method 'onRefreshClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_listView_doubleClicked'
+        // method 'onListViewDoubleClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QModelIndex &, std::false_type>
     >,
@@ -134,8 +134,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         (void)_t;
         switch (_id) {
         case 0: _t->addExpense(); break;
-        case 1: _t->on_loadData_clicked(); break;
-        case 2: _t->on_listView_doubleClicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
+        case 1: _t->onRefreshClicked(); break;
+        case 2: _t->onListViewDoubleClicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
         default: ;
         }
     }

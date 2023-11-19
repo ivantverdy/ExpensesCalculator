@@ -11,9 +11,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     setWindowTitle("Expenses calculator");
     setWindowIcon(QIcon("C:/QT project/calcicon.png"));
-    on_loadData_clicked();
+    onRefreshClicked();
+    connect(ui->refresh, SIGNAL(clicked()), this, SLOT(onRefreshClicked()));
     connect(ui->addExpense, SIGNAL(clicked()), this, SLOT(addExpense()));
-    connect(ui->listView, SIGNAL(doubleClicked(const QModelIndex&)), this, SLOT(on_listView_doubleClicked(const QModelIndex&)));
+    connect(ui->listView, SIGNAL(doubleClicked(const QModelIndex&)), this, SLOT(onListViewDoubleClicked(const QModelIndex&)));
 }
 
 MainWindow::~MainWindow()
@@ -26,7 +27,7 @@ void MainWindow::addExpense() {
     addWindowExp->show();
 }
 
-void MainWindow::on_loadData_clicked()
+void MainWindow::onRefreshClicked()
 {
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -44,9 +45,11 @@ void MainWindow::on_loadData_clicked()
     qDebug() << "Query: " << addQuery.lastQuery();
 }
 
-void MainWindow::on_listView_doubleClicked(const QModelIndex &index)
+void MainWindow::onListViewDoubleClicked(const QModelIndex &index)
 {
-
+    QString variable = ui->listView->model()->data(index).toString();
+    listOne = new listViewElement(this, variable);
+    listOne->show();
 }
 
 

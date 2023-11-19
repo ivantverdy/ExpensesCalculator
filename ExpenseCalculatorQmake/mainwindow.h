@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "addwindow.h"
+#include "listviewelement.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,12 +19,13 @@ public:
 private:
     Ui::MainWindow *ui;
     addWindow *addWindowExp;
+    listViewElement * listOne;
     QSqlQueryModel* model;
     QSqlDatabase db;
 private slots:
     void addExpense();
-    void on_loadData_clicked();
-    void on_listView_doubleClicked(const QModelIndex &index);
+    void onRefreshClicked();
+    void onListViewDoubleClicked(const QModelIndex &index);
 };
 
 #endif // MAINWINDOW_H

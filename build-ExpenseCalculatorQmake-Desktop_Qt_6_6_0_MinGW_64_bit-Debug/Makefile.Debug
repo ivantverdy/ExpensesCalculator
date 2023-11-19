@@ -471,6 +471,25 @@ debug/moc_listviewelement.cpp: ../ExpenseCalculatorQmake/listviewelement.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/QSizeF \
 		../../Qt/6.6.0/mingw_64/include/QtGui/QTransform \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlDatabase \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqldatabase.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qtsqlglobal.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qtsql-config.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qtsqlexports.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlDriver \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqldriver.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlError \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqlerror.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlQuery \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqlquery.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/QDebug \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlTableModel \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqltablemodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqlquerymodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/QFile \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfile.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfiledevice.h \
 		debug/moc_predefs.h \
 		../../Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/QT project/build-ExpenseCalculatorQmake-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -I"C:/QT project/ExpenseCalculatorQmake" -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtSql -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\ExpenseCalculatorQmake\listviewelement.h -o debug\moc_listviewelement.cpp
@@ -662,6 +681,7 @@ debug/moc_mainwindow.cpp: ../ExpenseCalculatorQmake/mainwindow.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/QFile \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qfile.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qfiledevice.h \
+		../ExpenseCalculatorQmake/listviewelement.h \
 		debug/moc_predefs.h \
 		../../Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/QT project/build-ExpenseCalculatorQmake-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -I"C:/QT project/ExpenseCalculatorQmake" -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtSql -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\ExpenseCalculatorQmake\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1103,7 +1123,79 @@ debug/listviewelement.o: ../ExpenseCalculatorQmake/listviewelement.cpp ../Expens
 		../../Qt/6.6.0/mingw_64/include/QtCore/QSizeF \
 		../../Qt/6.6.0/mingw_64/include/QtGui/QTransform \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_listviewelement.h
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlDatabase \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqldatabase.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qtsqlglobal.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qtsql-config.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qtsqlexports.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlDriver \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqldriver.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlError \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqlerror.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlQuery \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqlquery.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/QDebug \
+		../../Qt/6.6.0/mingw_64/include/QtSql/QSqlTableModel \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqltablemodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtSql/qsqlquerymodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/QFile \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfile.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfiledevice.h \
+		ui_listviewelement.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/QVariant \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QApplication \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qapplication.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qcoreapplication.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qeventloop.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfuture.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfutureinterface.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qmutex.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qdeadlinetimer.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qelapsedtimer.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qtsan_impl.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qresultstore.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qfuture_impl.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qthreadpool.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qthread.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qrunnable.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qexception.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qpromise.h \
+		../../Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
+		../../Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qlocale.h \
+		../../Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QHeaderView \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qheaderview.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt/6.6.0/mingw_64/include/QtGui/qvalidator.h \
+		../../Qt/6.6.0/mingw_64/include/QtCore/qregularexpression.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qslider.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qstyle.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qtabbar.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qrubberband.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QSpacerItem \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QTableView \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/qtableview.h \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QVBoxLayout \
+		../../Qt/6.6.0/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\listviewelement.o ..\ExpenseCalculatorQmake\listviewelement.cpp
 
 debug/main.o: ../ExpenseCalculatorQmake/main.cpp ../ExpenseCalculatorQmake/mainwindow.h \
@@ -1293,6 +1385,7 @@ debug/main.o: ../ExpenseCalculatorQmake/main.cpp ../ExpenseCalculatorQmake/mainw
 		../../Qt/6.6.0/mingw_64/include/QtCore/QFile \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qfile.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qfiledevice.h \
+		../ExpenseCalculatorQmake/listviewelement.h \
 		../../Qt/6.6.0/mingw_64/include/QtWidgets/QApplication \
 		../../Qt/6.6.0/mingw_64/include/QtWidgets/qapplication.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qcoreapplication.h \
@@ -1504,6 +1597,7 @@ debug/mainwindow.o: ../ExpenseCalculatorQmake/mainwindow.cpp ../ExpenseCalculato
 		../../Qt/6.6.0/mingw_64/include/QtCore/QFile \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qfile.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/qfiledevice.h \
+		../ExpenseCalculatorQmake/listviewelement.h \
 		ui_mainwindow.h \
 		../../Qt/6.6.0/mingw_64/include/QtCore/QVariant \
 		../../Qt/6.6.0/mingw_64/include/QtWidgets/QApplication \

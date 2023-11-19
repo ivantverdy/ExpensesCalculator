@@ -26,11 +26,11 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QListView *listView;
     QHBoxLayout *horizontalLayout;
-    QPushButton *loadData;
+    QPushButton *refresh;
     QSpacerItem *horizontalSpacer;
     QPushButton *addExpense;
     QStatusBar *statusbar;
@@ -42,22 +42,22 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 10, 771, 561));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(10, 10, 771, 561));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        listView = new QListView(widget);
+        listView = new QListView(layoutWidget);
         listView->setObjectName("listView");
 
         verticalLayout->addWidget(listView);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        loadData = new QPushButton(widget);
-        loadData->setObjectName("loadData");
-        loadData->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 127);\n"
+        refresh = new QPushButton(layoutWidget);
+        refresh->setObjectName("refresh");
+        refresh->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 127);\n"
 "font: 12pt \"Segoe UI\";\n"
 "min-width: 10px;\n"
 "border-style: outset;\n"
@@ -67,13 +67,13 @@ public:
 "color: white;\n"
 "pedding: 6px;"));
 
-        horizontalLayout->addWidget(loadData);
+        horizontalLayout->addWidget(refresh);
 
         horizontalSpacer = new QSpacerItem(500, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        addExpense = new QPushButton(widget);
+        addExpense = new QPushButton(layoutWidget);
         addExpense->setObjectName("addExpense");
         addExpense->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 127);\n"
 "font: 12pt \"Segoe UI\";\n"
@@ -103,7 +103,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        loadData->setText(QCoreApplication::translate("MainWindow", "Load data", nullptr));
+        refresh->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
         addExpense->setText(QCoreApplication::translate("MainWindow", "New", nullptr));
     } // retranslateUi
 
