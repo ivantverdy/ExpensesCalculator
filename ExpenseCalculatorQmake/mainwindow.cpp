@@ -29,25 +29,23 @@ void MainWindow::addExpense() {
 
 void MainWindow::onRefreshClicked()
 {
-
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
     db.open();
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery addQuery(db);
 
-    addQuery.prepare("select Description from Expense");
+    addQuery.prepare("select Label from Expense");
     addQuery.exec();
     model->setQuery(addQuery);
     ui->listView->setModel(model);
     db.close();
-    qDebug() << "Number of columns in the model: " << model->columnCount();
-    qDebug() << "Query: " << addQuery.lastQuery();
 }
 
 void MainWindow::onListViewDoubleClicked(const QModelIndex &index)
 {
-    listOne = new listViewElement(this, index.row());
+    int a = index.row()+1;
+    listOne = new listViewElement(this, a);
     listOne->show();
 }
 

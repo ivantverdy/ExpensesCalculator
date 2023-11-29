@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>452</height>
+    <width>448</width>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>391</width>
-     <height>221</height>
+     <width>421</width>
+     <height>182</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -29,36 +29,66 @@
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>Label</string>
+           <string>Label:</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>Category</string>
+           <string>Category:</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>Description</string>
+           <string>Description:</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>Price</string>
+           <string>Price:</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>Date and time</string>
+           <string>Date and time:</string>
           </property>
          </widget>
         </item>
@@ -101,16 +131,16 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="edit">
         <property name="text">
-         <string>PushButton</string>
+         <string>Edit</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="delete_2">
         <property name="text">
-         <string>PushButton</string>
+         <string>Delete</string>
         </property>
        </widget>
       </item>

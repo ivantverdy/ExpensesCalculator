@@ -42,17 +42,17 @@ public:
     QLineEdit *DateTime;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *edit;
+    QPushButton *delete_2;
 
     void setupUi(QDialog *listViewElement)
     {
         if (listViewElement->objectName().isEmpty())
             listViewElement->setObjectName("listViewElement");
-        listViewElement->resize(550, 452);
+        listViewElement->resize(448, 304);
         layoutWidget = new QWidget(listViewElement);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(10, 20, 391, 221));
+        layoutWidget->setGeometry(QRect(10, 20, 421, 182));
         verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -62,26 +62,34 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(layoutWidget);
         label->setObjectName("label");
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Arial")});
+        font.setBold(true);
+        label->setFont(font);
 
         verticalLayout->addWidget(label);
 
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
+        label_2->setFont(font);
 
         verticalLayout->addWidget(label_2);
 
         label_3 = new QLabel(layoutWidget);
         label_3->setObjectName("label_3");
+        label_3->setFont(font);
 
         verticalLayout->addWidget(label_3);
 
         label_4 = new QLabel(layoutWidget);
         label_4->setObjectName("label_4");
+        label_4->setFont(font);
 
         verticalLayout->addWidget(label_4);
 
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName("label_5");
+        label_5->setFont(font);
 
         verticalLayout->addWidget(label_5);
 
@@ -127,15 +135,15 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName("pushButton");
+        edit = new QPushButton(layoutWidget);
+        edit->setObjectName("edit");
 
-        horizontalLayout_2->addWidget(pushButton);
+        horizontalLayout_2->addWidget(edit);
 
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName("pushButton_2");
+        delete_2 = new QPushButton(layoutWidget);
+        delete_2->setObjectName("delete_2");
 
-        horizontalLayout_2->addWidget(pushButton_2);
+        horizontalLayout_2->addWidget(delete_2);
 
 
         verticalLayout_3->addLayout(horizontalLayout_2);
@@ -149,13 +157,13 @@ public:
     void retranslateUi(QDialog *listViewElement)
     {
         listViewElement->setWindowTitle(QCoreApplication::translate("listViewElement", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("listViewElement", "Label", nullptr));
-        label_2->setText(QCoreApplication::translate("listViewElement", "Category", nullptr));
-        label_3->setText(QCoreApplication::translate("listViewElement", "Description", nullptr));
-        label_4->setText(QCoreApplication::translate("listViewElement", "Price", nullptr));
-        label_5->setText(QCoreApplication::translate("listViewElement", "Date and time", nullptr));
-        pushButton->setText(QCoreApplication::translate("listViewElement", "PushButton", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("listViewElement", "PushButton", nullptr));
+        label->setText(QCoreApplication::translate("listViewElement", "Label:", nullptr));
+        label_2->setText(QCoreApplication::translate("listViewElement", "Category:", nullptr));
+        label_3->setText(QCoreApplication::translate("listViewElement", "Description:", nullptr));
+        label_4->setText(QCoreApplication::translate("listViewElement", "Price:", nullptr));
+        label_5->setText(QCoreApplication::translate("listViewElement", "Date and time:", nullptr));
+        edit->setText(QCoreApplication::translate("listViewElement", "Edit", nullptr));
+        delete_2->setText(QCoreApplication::translate("listViewElement", "Delete", nullptr));
     } // retranslateUi
 
 };

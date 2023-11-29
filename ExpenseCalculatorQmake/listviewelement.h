@@ -9,6 +9,9 @@
 #include <QDebug>
 #include <QSqlTableModel>
 #include <QFile>
+#include <QSoundEffect>
+#include <QMessageBox>
+#include "cannotadd.h"
 
 namespace Ui {
 class listViewElement;
@@ -19,14 +22,22 @@ class listViewElement : public QDialog
     Q_OBJECT
 
 public:
-    explicit listViewElement(QWidget *parent = nullptr, QVariant index = 0);
+    explicit listViewElement(QWidget *parent = nullptr, int a = 0);
     ~listViewElement();
+    void setID(int &a){
+        id = a;
+    }
+    int getID(){
+        return id;
+    }
 private slots:
-
+    void on_edit_clicked();
 private:
     Ui::listViewElement *ui;
     QSqlDatabase db;
-    qint64 id;
+    CanNotAdd *newWindow;
+    QSoundEffect *effect;
+    int id;
 };
 
 #endif // LISTVIEWELEMENT_H

@@ -8,6 +8,7 @@ addWindow::addWindow(QWidget *parent) : QDialog(parent), ui(new Ui::addWindow)
     setWindowTitle("Add expense");
     connect(ui->save, SIGNAL(clicked()), this, SLOT(saveClick()));
     connect(ui->cancel,  SIGNAL(clicked()), this, SLOT(cancelClick()));
+    effect = new QSoundEffect;
 }
 
 addWindow::~addWindow()
@@ -19,46 +20,32 @@ void addWindow::saveClick()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
-
-    if(QFile::exists("C:/QT project/databases/addWindowDB.db"))
+    db.open();
+    if(ui->label->text() == "" or ui->category->text() == "")
     {
-        qDebug() << "exists";
+        newWindow = new CanNotAdd(this);
+        effect->setSource(QUrl("file:///C:/QT project/WindowsError.wav"));
+        effect->play();
+        reject();
+        newWindow->show();
     }
     else
     {
-        qDebug() << "doesn't";
-        qDebug() << "Error: " << db.lastError();
-    }
-
-    if(db.open())
-    {
-        qDebug() << "Database is connected";
-    }
-    else
-    {
-        qDebug() << "Database is not connected";
-        qDebug() << "Error: " << db.lastError();
-    }
-
-    qDebug() << ui->label->text()<<ui->category->text()<< ui->description->text()<<ui->price->text()<<ui->dateTime->text();
-
     QSqlQuery query(db);
-    //query.prepare("select * from Expense");
     query.prepare("insert into Expense(Label, Category, Description, Price, DateTime) values(:Label, :Category, :Description, :Price, :DateTime)");
-    //query.prepare("insert into Expense(Label) values('123')");
     query.bindValue(":Label", ui->label->text());
     query.bindValue(":Category", ui->category->text());
     query.bindValue(":Description", ui->description->text());
     query.bindValue(":Price", ui->price->value());
     query.bindValue(":DateTime", ui->dateTime->text());
-    qDebug() << query.boundValues();
-    if (query.exec()) {
-        qDebug() << "Data saved successfully!";
-    } else {
-        qDebug() << "Error saving data: " << query.lastError();
-    }
 
-    query.lastError().text();
+    if (query.exec()) {
+        QMessageBox::information(this, tr("Edit"), tr("Updated"));
+    }
+    else {
+        QMessageBox::critical(this, tr("Error:"), query.lastError().text());
+    }
+    }
     db.close();
     accept();
 }
