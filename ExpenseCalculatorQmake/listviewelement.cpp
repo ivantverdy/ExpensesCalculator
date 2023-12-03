@@ -61,7 +61,7 @@ void listViewElement::on_edit_clicked()
 
         if (query.exec()) {
             QMessageBox::information(this, tr("Edit"), tr("Updated"));
-
+            emit refreshClicked();
         } else {
             QMessageBox::critical(this, tr("Error:"), query.lastError().text());
         }

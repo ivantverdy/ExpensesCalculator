@@ -38,6 +38,8 @@ private:
     CanNotAdd *newWindow;
     QSoundEffect *effect;
     int id;
+signals:
+    void refreshClicked();
 };
 
 #endif // LISTVIEWELEMENT_H

@@ -47,6 +47,7 @@ void MainWindow::onListViewDoubleClicked(const QModelIndex &index)
 {
     int a = index.row()+1;
     listOne = new listViewElement(this, a);
+    connect(listOne, SIGNAL(refreshClicked()), this, SLOT(onRefreshClicked()));
     listOne->show();
 }
 
