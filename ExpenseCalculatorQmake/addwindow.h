@@ -34,6 +34,8 @@ private:
 private slots:
     void saveClick();
     void cancelClick();
+signals:
+    void refreshClicked();
 };
 
 #endif // ADDWINDOW_H

@@ -24,6 +24,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::addExpense() {
     addWindowExp = new addWindow(this);
+    connect(addWindowExp, SIGNAL(refreshClicked()), this, SLOT(onRefreshClicked()));
     addWindowExp->show();
 }
 

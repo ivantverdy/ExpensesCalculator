@@ -60,7 +60,7 @@ void listViewElement::on_edit_clicked()
         query.bindValue(":id", getID());
 
         if (query.exec()) {
-            QMessageBox::critical(this, tr("Edit"), tr("Updated"));
+            QMessageBox::information(this, tr("Edit"), tr("Updated"));
 
         } else {
             QMessageBox::critical(this, tr("Error:"), query.lastError().text());
