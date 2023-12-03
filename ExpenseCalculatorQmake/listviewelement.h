@@ -32,6 +32,8 @@ public:
     }
 private slots:
     void on_edit_clicked();
+    void on_deleteButton_clicked();
+
 private:
     Ui::listViewElement *ui;
     QSqlDatabase db;

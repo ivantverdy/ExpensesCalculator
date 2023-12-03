@@ -26,7 +26,7 @@ listViewElement::listViewElement(QWidget *parent, int a) : QDialog(parent), ui(n
     else{
         qDebug() << queryShow.lastError().text();
     }
-    connect(ui->edit, SIGNAL(clicked()), this, SLOT(on_edit_clicked(int a)));
+    connect(ui->edit, SIGNAL(clicked()), this, SLOT(on_edit_clicked(i)));
 }
 
 listViewElement::~listViewElement()
@@ -65,6 +65,27 @@ void listViewElement::on_edit_clicked()
         } else {
             QMessageBox::critical(this, tr("Error:"), query.lastError().text());
         }
+    }
+    db.close();
+    accept();
+}
+
+
+void listViewElement::on_deleteButton_clicked()
+{
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
+    db.open();
+
+    QSqlQuery query(db);
+    query.prepare("delete from Expense where id = :id");
+    query.bindValue(":id", getID());
+
+    if (query.exec()) {
+        QMessageBox::information(this, tr("Delete"), tr("Deleted"));
+        emit refreshClicked();
+    } else {
+        QMessageBox::critical(this, tr("Error:"), query.lastError().text());
     }
     db.close();
     accept();

@@ -6,143 +6,144 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>448</width>
-    <height>304</height>
+    <width>540</width>
+    <height>273</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
-     <width>421</width>
-     <height>182</height>
+     <y>10</y>
+     <width>501</width>
+     <height>221</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Label:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="Label"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Price:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Category:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="Category"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Description:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="Description"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Date and time of purchase:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QLabel" name="label">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <bold>true</bold>
-           </font>
+         <widget class="QPushButton" name="edit">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(0, 0, 127);
+font: 12pt &quot;Segoe UI&quot;;
+min-width: 10px;
+border-style: outset;
+border-width: 2px;
+border-radius:10px;
+border-color: white;
+color: white;
+pedding: 6px;</string>
           </property>
           <property name="text">
-           <string>Label:</string>
+           <string>Edit</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_2">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <bold>true</bold>
-           </font>
+         <widget class="QPushButton" name="deleteButton">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(0, 0, 127);
+font: 12pt &quot;Segoe UI&quot;;
+min-width: 10px;
+border-style: outset;
+border-width: 2px;
+border-radius:10px;
+border-color: white;
+color: white;
+pedding: 6px;</string>
           </property>
           <property name="text">
-           <string>Category:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_3">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Description:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Price:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Date and time:</string>
+           <string>Delete</string>
           </property>
          </widget>
         </item>
        </layout>
       </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLineEdit" name="Label"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Category"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Description"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Price"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="DateTime"/>
-        </item>
-       </layout>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="Price"/>
       </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="edit">
-        <property name="text">
-         <string>Edit</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="delete_2">
-        <property name="text">
-         <string>Delete</string>
-        </property>
-       </widget>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="DateTime"/>
       </item>
      </layout>
     </item>

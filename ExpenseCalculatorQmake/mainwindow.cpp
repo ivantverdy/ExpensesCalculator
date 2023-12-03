@@ -5,6 +5,7 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QListWidgetItem>
+#include <QAbstractItemModel>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {

@@ -121,11 +121,29 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         save = new QPushButton(verticalLayoutWidget_2);
         save->setObjectName("save");
+        save->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 127);\n"
+"font: 12pt \"Segoe UI\";\n"
+"min-width: 10px;\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius:10px;\n"
+"border-color: white;\n"
+"color: white;\n"
+"pedding: 6px;"));
 
         horizontalLayout->addWidget(save);
 
         cancel = new QPushButton(verticalLayoutWidget_2);
         cancel->setObjectName("cancel");
+        cancel->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 127);\n"
+"font: 12pt \"Segoe UI\";\n"
+"min-width: 10px;\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-radius:10px;\n"
+"border-color: white;\n"
+"color: white;\n"
+"pedding: 6px;"));
 
         horizontalLayout->addWidget(cancel);
 
