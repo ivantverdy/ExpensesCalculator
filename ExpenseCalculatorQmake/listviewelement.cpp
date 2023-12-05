@@ -82,9 +82,26 @@ void listViewElement::on_deleteButton_clicked()
     query.bindValue(":id", getID());
 
     if (query.exec()) {
-        QMessageBox::information(this, tr("Delete"), tr("Deleted"));
-        emit refreshClicked();
-    } else {
+        QSqlQuery updateIdQuery(db);
+        updateIdQuery.prepare("UPDATE Expense SET id = id - 1 WHERE id > :deletedId");
+        updateIdQuery.bindValue(":deletedId", getID());
+        if (updateIdQuery.exec()) {
+            QSqlQuery updateSeqQuery(db);
+            updateSeqQuery.prepare("UPDATE sqlite_sequence SET seq = seq - 1 WHERE name = 'Expense'");
+            if(updateSeqQuery.exec())
+            {
+                QMessageBox::information(this, tr("Delete"), tr("Deleted"));
+                emit refreshClicked();
+            }
+            else{
+                QMessageBox::critical(this, tr("Error:"), updateIdQuery.lastError().text());
+            }
+        }
+        else{
+            QMessageBox::critical(this, tr("Error:"), updateIdQuery.lastError().text());
+        }
+    }
+    else {
         QMessageBox::critical(this, tr("Error:"), query.lastError().text());
     }
     db.close();
