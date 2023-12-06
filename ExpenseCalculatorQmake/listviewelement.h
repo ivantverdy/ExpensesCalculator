@@ -11,7 +11,6 @@
 #include <QFile>
 #include <QSoundEffect>
 #include <QMessageBox>
-#include "cannotadd.h"
 
 namespace Ui {
 class listViewElement;
@@ -33,11 +32,9 @@ public:
 private slots:
     void on_edit_clicked();
     void on_deleteButton_clicked();
-
 private:
     Ui::listViewElement *ui;
     QSqlDatabase db;
-    CanNotAdd *newWindow;
     QSoundEffect *effect;
     int id;
 signals:

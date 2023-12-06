@@ -3,8 +3,8 @@
 
 listViewElement::listViewElement(QWidget *parent, int a) : QDialog(parent), ui(new Ui::listViewElement)
 {
-    setID(a);
     ui->setupUi(this);
+    setID(a);
     setWindowTitle("Edit/Delete");
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
@@ -26,7 +26,8 @@ listViewElement::listViewElement(QWidget *parent, int a) : QDialog(parent), ui(n
     else{
         qDebug() << queryShow.lastError().text();
     }
-    connect(ui->edit, SIGNAL(clicked()), this, SLOT(on_edit_clicked(i)));
+
+    effect = new QSoundEffect;
 }
 
 listViewElement::~listViewElement()
@@ -40,34 +41,32 @@ void listViewElement::on_edit_clicked()
     db.setDatabaseName("C:/QT project/databases/addWindowDB.db");
     db.open();
 
+    QSqlQuery query(db);
+    query.prepare("update Expense set Label = :Label, Category = :Category, Description = :Description, Price = :Price, DateTime = :DateTime where id = :id");
+    query.bindValue(":Label", ui->Label->text());
+    query.bindValue(":Category", ui->Category->text());
+    query.bindValue(":Description", ui->Description->text());
+    query.bindValue(":Price", ui->Price->text());
+    query.bindValue(":DateTime", ui->DateTime->text());
+    query.bindValue(":id", getID());
+
     if(ui->Label->text() == "" or ui->Category->text() == "")
     {
-        newWindow = new CanNotAdd(this);
         effect->setSource(QUrl("file:///C:/QT project/WindowsError.wav"));
         effect->play();
-        reject();
-        newWindow->show();
+        QMessageBox::information(this, tr("Add"), tr("You can't add expense without label or category"));
     }
     else
     {
-        QSqlQuery query(db);
-        query.prepare("update Expense set Label = :Label, Category = :Category, Description = :Description, Price = :Price, DateTime = :DateTime where id = :id");
-        query.bindValue(":Label", ui->Label->text());
-        query.bindValue(":Category", ui->Category->text());
-        query.bindValue(":Description", ui->Description->text());
-        query.bindValue(":Price", ui->Price->text());
-        query.bindValue(":DateTime", ui->DateTime->text());
-        query.bindValue(":id", getID());
-
         if (query.exec()) {
             QMessageBox::information(this, tr("Edit"), tr("Updated"));
             emit refreshClicked();
+            accept();
         } else {
             QMessageBox::critical(this, tr("Error:"), query.lastError().text());
         }
     }
     db.close();
-    accept();
 }
 
 
@@ -107,4 +106,3 @@ void listViewElement::on_deleteButton_clicked()
     db.close();
     accept();
 }
-

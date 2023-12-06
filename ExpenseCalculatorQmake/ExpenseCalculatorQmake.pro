@@ -10,20 +10,17 @@ CONFIG += c++17
 
 SOURCES += \
     addwindow.cpp \
-    cannotadd.cpp \
     listviewelement.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     addwindow.h \
-    cannotadd.h \
     listviewelement.h \
     mainwindow.h
 
 FORMS += \
     addwindow.ui \
-    cannotadd.ui \
     listviewelement.ui \
     mainwindow.ui
 

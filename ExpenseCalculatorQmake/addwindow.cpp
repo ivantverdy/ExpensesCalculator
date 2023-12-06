@@ -23,11 +23,9 @@ void addWindow::saveClick()
     db.open();
     if(ui->label->text() == "" or ui->category->text() == "")
     {
-        newWindow = new CanNotAdd(this);
         effect->setSource(QUrl("file:///C:/QT project/WindowsError.wav"));
         effect->play();
-        reject();
-        newWindow->show();
+        QMessageBox::information(this, tr("Add"), tr("You can't add expense without label or category"));
     }
     else
     {
@@ -42,13 +40,13 @@ void addWindow::saveClick()
     if (query.exec()) {
         QMessageBox::information(this, tr("Edit"), tr("Updated"));
         emit refreshClicked();
+        accept();
     }
     else {
         QMessageBox::critical(this, tr("Error:"), query.lastError().text());
     }
     }
     db.close();
-    accept();
 }
 
 

@@ -11,7 +11,6 @@
 #include <QFile>
 #include <QSoundEffect>
 #include <QMessageBox>
-#include "cannotadd.h"
 
 namespace Ui {
 class addWindow;
@@ -28,7 +27,6 @@ public:
 private:
     Ui::addWindow *ui;
     QSqlDatabase db;
-    CanNotAdd *newWindow;
     QSoundEffect *effect;
 
 private slots:
